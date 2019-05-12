@@ -1,0 +1,306 @@
+
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Condensed', system-ui;
+    font-style: italic;
+    font-style: italic;
+  }
+  
+  .card {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.07), 0px 12px 28px rgba(0, 0, 0, 0.1);
+    border-radius: .5rem;
+  }
+  .card--animating {
+    -webkit-animation: cardFade 500ms ease forwards;
+            animation: cardFade 500ms ease forwards;
+  }
+  .card__title {
+    font-size: 2rem;
+    font-family: 'Roboto Condensed', system-ui;
+    font-style: italic;
+  }
+  .card__body, .card__footer {
+    padding: 1rem 1.5rem;
+  }
+  .card__header {
+    padding: 2.5rem 1.5rem 1rem;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+  }
+  .card__footer {
+    background: #F2F5F7;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .card__footer .button {
+    margin-left: .5rem;
+  }
+  
+  .button {
+    font-family: inherit;
+    background: #F2F5F7;
+    border: 0;
+    border-radius: .5rem;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: all 200ms ease;
+  }
+  .button:hover, .button:focus {
+    transition: all 200ms ease;
+  }
+  .button:focus, .button:active {
+    outline: 0;
+  }
+  .button--primary {
+    background: #d44179;
+    color: white;
+  }
+  .button--primary:hover, .button--primary:focus {
+    background: #d44179;
+  }
+  .button--secondary {
+    background: #F2F5F7;
+    color: #646E7D;
+  }
+  .button--secondary:hover, .button--secondary:focus {
+    background: #d2dde4;
+  }
+  
+  .input {
+    font-family: inherit;
+    border-radius: .5rem;
+    border: 0;
+    background: #F2F5F7;
+    color: inherit;
+    padding: 1rem 1.5rem;
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .input:focus, .input:active {
+    outline: 0;
+  }
+  
+  .select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem 1rem 4rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    position: relative;
+    -webkit-animation: fade 300ms ease forwards;
+            animation: fade 300ms ease forwards;
+    transition: all 120ms ease;
+  }
+  .select:not(:last-of-type) {
+    margin-bottom: .5rem;
+  }
+  .select:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 1rem;
+    height: 1rem;
+    background: #d2dde4;
+    border-radius: 50%;
+  }
+  .select__type {
+    font-size: .84em;
+    color: #646E7D;
+  }
+  .select:hover, .select:focus {
+    background: #F2F5F7;
+    transition: all 120ms ease;
+  }
+  .select--active, .select--active:hover {
+    background: #fff1f0;
+    color: #950400;
+    transition: all 120ms ease;
+  }
+  .select--active:before, .select--active:hover:before {
+    background: #e10600;
+  }
+  
+  .select-group {
+    max-height: 250px;
+    min-height: 250px;
+    overflow-y: auto;
+  }
+  
+  .list {
+    -webkit-animation: listFade 500ms ease 500ms forwards;
+            animation: listFade 500ms ease 500ms forwards;
+    display: none;
+    opacity: 0;
+    width: 100%;
+    max-width: 500px;
+    padding: 1.5rem;
+  }
+  .list__item {
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: .5rem;
+    background: #F2F5F7;
+    margin-bottom: 1.5rem;
+    color: #646E7D;
+  }
+  .list__item strong {
+    font-family: 'Roboto Condensed', system-ui;
+    font-style: italic;
+    font-size: 2.5rem;
+    color: #142031;
+  }
+  .list__title {
+    color: #e10600;
+  }
+  .list__subtitle {
+    display: block;
+    margin-bottom: 1rem;
+    color: #646E7D;
+  }
+  
+  @-webkit-keyframes cardFade {
+    from {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      -webkit-transform: translate(-300px);
+              transform: translate(-300px);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes cardFade {
+    from {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      -webkit-transform: translate(-300px);
+              transform: translate(-300px);
+      opacity: 0;
+    }
+  }
+  @-webkit-keyframes listFade {
+    from {
+      -webkit-transform: translateX(300px);
+              transform: translateX(300px);
+      opacity: 0;
+    }
+    to {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+      opacity: 1;
+    }
+  }
+  @keyframes listFade {
+    from {
+      -webkit-transform: translateX(300px);
+              transform: translateX(300px);
+      opacity: 0;
+    }
+    to {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+      opacity: 1;
+    }
+  }
+  .arrow {
+    width: 32px;
+    height: 32px;
+    color: #646E7D;
+  }
+  .arrow__container {
+    width: 100%;
+    display: block;
+    position: relative;
+    height: 32px;
+    margin: 1rem 0;
+  }
+  .arrow__button {
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  .arrow__group {
+    z-index: 8;
+    display: inline-block;
+    position: absolute;
+    -webkit-animation: arrows 1s ease infinite;
+            animation: arrows 1s ease infinite;
+  }
+  .arrow__group .arrow:first-of-type {
+    color: rgba(225, 6, 0, 0.34);
+  }
+  .arrow__group .arrow:nth-of-type(2) {
+    color: rgba(225, 6, 0, 0.67);
+  }
+  .arrow__group .arrow:last-of-type {
+    color: #e10600;
+  }
+  
+  @-webkit-keyframes arrows {
+    0% {
+      opacity: 0;
+      left: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      left: calc(100% - 110px);
+    }
+  }
+  
+  @keyframes arrows {
+    0% {
+      opacity: 0;
+      left: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      left: calc(100% - 110px);
+    }
+  }
+  @-webkit-keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
